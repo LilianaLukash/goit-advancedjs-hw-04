@@ -10,7 +10,7 @@
   <body>
     <body>
   <header>
-    <form class="search-form">
+    <form class="search-form" >
       <input type="text" name="query" placeholder="Search images..." required>
       <button type="submit">Search</button>
     </form>
@@ -19,6 +19,8 @@
   <main>
     <div class="gallery"></div>
     <div class="loader hidden">Loading...</div>
+    <button id="load-more-btn" class="hidden">Load more</button>
+    <p id="message-box" class="hidden"></p>
   </main>
     <script type="module" src="./main.js"></script>
   </body>

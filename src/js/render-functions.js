@@ -1,5 +1,6 @@
 export function renderGallery(images) {
-  return images.map(image => `
+  const gallery = document.querySelector(".gallery");
+   const markup = images.map(image => `
     <div class="photo-card">
       <a href="${image.largeImageURL}">
         <img src="${image.webformatURL}" alt="${image.tags}" loading="lazy" />
@@ -12,4 +13,10 @@ export function renderGallery(images) {
       </div>
     </div>
   `).join('');
+  gallery.insertAdjacentHTML('beforeend', markup);
+}
+
+export function clearGallery() {
+  const gallery = document.querySelector('.gallery');
+  gallery.innerHTML = '';
 }

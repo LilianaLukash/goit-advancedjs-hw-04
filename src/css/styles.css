@@ -51,8 +51,12 @@ button {
   border: none;
 
   border-radius: 2px;
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
 
   margin-top: 10px;
+  height: 34px;
 }
 .loader {
   display: none;
@@ -62,4 +66,21 @@ button {
 
 .loader.visible {
   display: block;
+}
+
+#message-box {
+  text-align: center;
+  margin-top: 20px;
+  font-size: 18px;
+  color: red;
+}
+#load-more-btn {
+  margin-top: 10px;
+}
+.hidden {
+  display: none;
+}
+
+input {
+  height: 30px;
 }
