@@ -1,0 +1,65 @@
+@import url('./reset.css');
+@import url('simplelightbox/dist/simple-lightbox.min.css');
+@import url('izitoast/dist/css/iziToast.min.css');
+
+:root {
+  font-family: Inter, Avenir, Helvetica, Arial, sans-serif;
+  font-size: 16px;
+  line-height: 24px;
+  font-weight: 400;
+
+  color: #242424;
+  background-color: rgba(255, 255, 255, 0.87);
+
+  font-synthesis: none;
+  text-rendering: optimizeLegibility;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  -webkit-text-size-adjust: 100%;
+}
+
+header {
+  display: flex;
+  justify-content: center;
+  margin-bottom: 20px;
+}
+.gallery {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 20px;
+}
+.photo-card {
+  width: 300px;
+  height: 240px;
+}
+.info {
+  display: flex;
+  justify-content: space-around;
+}
+.info-item {
+  display: flex;
+  flex-direction: column;
+}
+img {
+  width: 300px;
+  height: 200px;
+}
+button {
+  background-color: rgb(86, 43, 226);
+  color: white;
+  border: none;
+
+  border-radius: 2px;
+
+  margin-top: 10px;
+}
+.loader {
+  display: none;
+  text-align: center;
+  padding: 2rem;
+}
+
+.loader.visible {
+  display: block;
+}
