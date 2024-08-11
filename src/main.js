@@ -51,6 +51,7 @@ async function onLoadMore() {
   try {
     const data = await fetchImages(searchQuery, currentPage);
 
+    
     if (data.hits.length === 0) {
       loadMoreBtn.classList.add('hidden');
       showMessage("We're sorry, but you've reached the end of search results.");
