@@ -16,8 +16,7 @@ export function renderGallery(images) {
     </div>
   `).join('');
   gallery.insertAdjacentHTML('beforeend', markup);
-  let lightbox = new SimpleLightbox('.gallery a');
-  lightbox.refresh();
+
 }
 
 export function clearGallery() {

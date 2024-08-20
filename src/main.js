@@ -13,6 +13,8 @@ const loader = document.querySelector('.loader');
 let searchQuery = '';
 let currentPage = 1;
 let totalHits = 0; // Добавляем переменную для отслеживания общего количества найденных изображений
+let per_page = 15;
+let lightbox = new SimpleLightbox('.gallery a');
 
 form.addEventListener('submit', onSearch);
 loadMoreBtn.addEventListener('click', onLoadMore);
@@ -59,10 +61,11 @@ async function onSearch(event) {
     }
 
     renderGallery(data.hits);
+    lightbox.refresh();
     if (data.hits.length > 0 && currentPage * data.hits.length < totalHits) {
       loadMoreBtn.classList.remove('hidden');
     }
-    currentPage++;
+    
     
   } catch (error) {
     hideLoader();
@@ -72,19 +75,23 @@ async function onSearch(event) {
 
 async function onLoadMore() {
   showLoader();
+  currentPage++;
 
   try {
     const data = await fetchImages(searchQuery, currentPage);
     hideLoader();
 
-    if (data.hits.length === 0 || currentPage * data.hits.length >= totalHits) {
+    renderGallery(data.hits);
+    lightbox.refresh();
+    
+
+    if ( currentPage * per_page >= totalHits) {
       loadMoreBtn.classList.add('hidden');
       showMessage("We're sorry, but you've reached the end of search results.");
       return;
     }
 
-    renderGallery(data.hits);
-    currentPage++;
+   
     
 
     // Прокрутка страницы
